@@ -1,6 +1,8 @@
 # Multirotors Emergency Landing
 
-Code coming soon!
+Code coming soon! 
+
+**Note:** There have been some delays in the process of open-sourcing the code. The current target is set to the end of Spring 2023 . However, anyone interested in having access to an initial version of code can contact the author [Luca Bartolomei](mailto:lbartolomei@ethz.ch).
 
 If you use this code in your academic work, please cite:
 
