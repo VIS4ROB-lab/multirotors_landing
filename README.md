@@ -134,25 +134,18 @@ In [this folder](./multirotors_landing_lib/tests/communication) examples on how 
 
 1. Communication between client and server via raw sockets:
 
-		```
 		$ ./multirotors_landing_lib/build/server_socket # Terminal 1 -- server
 		$ ./multirotors_landing_lib/build/client_socket # Terminal 2 -- client
-		```
 
 2. Communication between client and server via communicators (which provide a more complete interface than raw sockets):
 
-		```
 		$ ./multirotors_landing_lib/build/server_communicator # Terminal 1 -- server
 		$ ./multirotors_landing_lib/build/client_communicator # Terminal 2 -- client
-		```
-		```
 
 2. Python interface, with exchange of RGB and grayscale images:
 
-		```
 		$ python3 multirotors_landing_lib/tests/communication/python/socket_server.py # Terminal 1 -- server
 		$ ./multirotors_landing_lib/build/python_socket_client # Terminal 2 -- client
-		```
 	
 ## Contributing
 Contributions that help to improve the code are welcome. In case you want to contribute, please adapt to the [Google C++ coding style](https://google.github.io/styleguide/cppguide.html) and run `bash clang-format-all .` on your code before any commit.
