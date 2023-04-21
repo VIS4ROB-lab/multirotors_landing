@@ -126,6 +126,8 @@ $ python3 scripts/quadrotor_testing.py -w ${path_to_weights}
 
 **Note**: In the current version of the code, communication sockets are __not__ used, as we use the ground-truth images from the Vulkan-based renderer. However, we include the library we implemented for communication with semantic segmentation and depth completion neural networks for completeness. Unforuntaly, the networks we used in the paper are closed-source, so we cannot provide them.
 
+**Note**: The provided examples can be used if the C++ code is built manually.
+
 In [this folder](./multirotors_landing_lib/tests/communication) examples on how to use socket-based communication are provided. It is possible to run a series of examples, where different types of information are exchanged between a server and a client (e.g. strings, vectors, images). The provided sockets can be used to interface the Vulkan-based renderer with any custom neural network.
 
 1. Communication between client and server via raw sockets:
