@@ -29,37 +29,37 @@ This project is released under a [GPLv3 license](.aux/license_gpl.txt).
 ## Installation
 So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS**.
 
-Install the following dependencies:
-```
-$ sudo apt update && sudo apt install build-essential cmake
-$ sudo add-apt-repository ppa:deadsnakes/ppa 
-$ sudo apt update && sudo apt install python3.6-dev python3.6-venv
-$ sudo apt install libeigen3-dev libyaml-cpp-dev libopencv-dev libpcl-dev liboctomap-dev libgoogle-glog-dev libglm-dev libvulkan-dev
-```
+1. Install the following dependencies:
+	```
+	$ sudo apt update && sudo apt install build-essential cmake
+	$ sudo add-apt-repository ppa:deadsnakes/ppa 
+	$ sudo apt update && sudo apt install python3.6-dev python3.6-venv
+	$ sudo apt install libeigen3-dev libyaml-cpp-dev libopencv-dev libpcl-dev liboctomap-dev libgoogle-glog-dev libglm-dev libvulkan-dev
+	```
 
-Clone the repo:
-```
-$ git clone git@github.com:VIS4ROB-lab/multirotors_landing.git
-```
-and navigate to the main library folder:
-```
-$ cd multirotors_landing_lib
-```
+2. Clone the repo:
+	```
+	$ git clone git@github.com:VIS4ROB-lab/multirotors_landing.git
+	```
 
-It strongly recommended to create a __virtual environment__:
-```
-$ python3.6 -m venv ~/venvs/landing/
-```
+3. Naigate to the main library folder:
+	```
+	$ cd multirotors_landing_lib
+	```
 
-Build the project with `pip` (note: building of `opencv-python` can take a while):
-```
-$ source ~/venvs/landing/bin/activate
-$ pip install --upgrade pip wheel
-$ pip install opencv-python==4.5.2.54
-$ export ML_PATH=path_to_multirotors_landing >> ~/.bashrc  # Path without final "/"
-$ cd multirotors_landing/multirotors_landing_lib
-$ pip install .
-```
+4. At this point, it is strongly recommended to create a __virtual environment__:
+	```
+	$ python3.6 -m venv ~/venvs/landing/
+	```
+
+5. Build the project with `pip` (note: building of `opencv-python` can take a while):
+	```
+	$ source ~/venvs/landing/bin/activate
+	$ pip install --upgrade pip wheel
+	$ pip install opencv-python==4.5.2.54
+	$ export ML_PATH=path_to_multirotors_landing >> ~/.bashrc  # Path without final "/"
+	$ pip install .
+	```
 
 ### Building without Python bindings
 To build without Python bindings and use only the C++ library, run the following commands:
