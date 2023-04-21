@@ -29,37 +29,37 @@ This project is released under a [GPLv3 license](.aux/license_gpl.txt).
 ## Installation
 So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS**.
 
-Install the following dependencies:
-```
-$ sudo apt update && sudo apt install build-essential cmake
-$ sudo add-apt-repository ppa:deadsnakes/ppa 
-$ sudo apt update && sudo apt install python3.6-dev python3.6-venv
-$ sudo apt install libeigen3-dev libyaml-cpp-dev libopencv-dev libpcl-dev liboctomap-dev libgoogle-glog-dev libglm-dev libvulkan-dev
-```
+1. Install the following dependencies:
+	```
+	$ sudo apt update && sudo apt install build-essential cmake
+	$ sudo add-apt-repository ppa:deadsnakes/ppa 
+	$ sudo apt update && sudo apt install python3.6-dev python3.6-venv
+	$ sudo apt install libeigen3-dev libyaml-cpp-dev libopencv-dev libpcl-dev liboctomap-dev libgoogle-glog-dev libglm-dev libvulkan-dev
+	```
 
-Clone the repo:
-```
-$ git clone git@github.com:VIS4ROB-lab/multirotors_landing.git
-```
-and navigate to the main library folder:
-```
-$ cd multirotors_landing_lib
-```
+2. Clone the repo:
+	```
+	$ git clone git@github.com:VIS4ROB-lab/multirotors_landing.git
+	```
 
-It strongly recommended to create a __virtual environment__:
-```
-$ python3.6 -m venv ~/venvs/landing/
-```
+3. Naigate to the main library folder:
+	```
+	$ cd multirotors_landing_lib
+	```
 
-Build the project with `pip` (note: building of `opencv-python` can take a while):
-```
-$ source ~/venvs/landing/bin/activate
-$ pip install --upgrade pip wheel
-$ pip install opencv-python==4.5.2.54
-$ export ML_PATH=path_to_multirotors_landing >> ~/.bashrc  # Path without final "/"
-$ cd multirotors_landing/multirotors_landing_lib
-$ pip install .
-```
+4. At this point, it is strongly recommended to create a __virtual environment__:
+	```
+	$ python3.6 -m venv ~/venvs/landing/
+	```
+
+5. Build the project with `pip` (note: building of `opencv-python` can take a while):
+	```
+	$ source ~/venvs/landing/bin/activate
+	$ pip install --upgrade pip wheel
+	$ pip install opencv-python==4.5.2.54
+	$ export ML_PATH=path_to_multirotors_landing >> ~/.bashrc  # Path without final "/"
+	$ pip install .
+	```
 
 ### Building without Python bindings
 To build without Python bindings and use only the C++ library, run the following commands:
@@ -125,6 +125,8 @@ $ python3 scripts/quadrotor_testing.py -w ${path_to_weights}
 ## Socket Communication
 
 **Note**: In the current version of the code, communication sockets are __not__ used, as we use the ground-truth images from the Vulkan-based renderer. However, we include the library we implemented for communication with semantic segmentation and depth completion neural networks for completeness. Unforuntaly, the networks we used in the paper are closed-source, so we cannot provide them.
+
+**Note**: The provided examples can be used if the C++ code is built manually.
 
 In [this folder](./multirotors_landing_lib/tests/communication) examples on how to use socket-based communication are provided. It is possible to run a series of examples, where different types of information are exchanged between a server and a client (e.g. strings, vectors, images). The provided sockets can be used to interface the Vulkan-based renderer with any custom neural network.
 
