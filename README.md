@@ -8,7 +8,7 @@ __Contact__: Luca Bartolomei, lbartolomei@ethz.ch
 
 ## Citation
 
-If you use this code in your academic work, please cite:
+If you use this code in your academic work, please cite [[PDF](https://www.research-collection.ethz.ch/handle/20.500.11850/605990)]:
 
     @inproceedings{bartolomei2022multi,
       title={Autonomous Emergency Landing for Multicopters using Deep Reinforcement Learning},
