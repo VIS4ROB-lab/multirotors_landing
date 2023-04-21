@@ -7,10 +7,10 @@ common:
    visualization: true
 
 training_env:
-   type_input: "ground_truth"  # Either 'ground_truth' or 'deep_learning'
+   type_input: "ground_truth"  # At the moment, only 'ground_truth' is supported
 
    sim_dt: 0.25 # if we are not using a sleep in between actions: 0.10 
-   max_t: 90.0 # For unity: 300, for vulkan: 30
+   max_t: 90.0
 
    # Action space dimensions
    act_dim: 1
@@ -18,7 +18,7 @@ training_env:
    # Observation space dimensions
    img_width: 128
    img_height: 128
-   img_channels: 2 # If 1: use only semantics; if 2: use depth + semantics
+   img_channels: 2 # depth + semantics
    
    # Reward parameters
    reward:
