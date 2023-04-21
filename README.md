@@ -4,7 +4,7 @@ __Author__: Luca Bartolomei
 __Affiliation__: Vision For Robotics Lab, ETH Zurich  
 __Contact__: Luca Bartolomei, lbartolomei@ethz.ch  
 
-**Disclaimer**: Some numerical results can be different from the ones presented in the paper because we are now using more recent versions of the python libraries. Expect different numbers of training steps and reward values than the paper. However, performances at test time should be close to the ones in the paper.
+**Disclaimer**: Some numerical results can be different from the ones in the paper because we are using more recent versions of some python libraries (e.g. expect different numbers of training steps and reward values than the paper). However, performances at test time should be close to the published ones.
 
 ## Citation
 
