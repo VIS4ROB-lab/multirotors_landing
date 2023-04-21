@@ -87,6 +87,8 @@ Every model is composed of three files:
 2. `*_rgbs.png`: The texture of the model. The first three channels of this image are the actual texture, while the alpha channel contains the semantic labels. This is used by the Vulkan-based renderer.
 3. `*.ply`: Point cloud of the model used for collision checking during training. An OctoMap is generated from this file.
 
+More information about the rendering pipeline can be found [here](./multirotors_landing_lib/thirdparty/vulkan_glasses_for_robots/README.md).
+
 ## Running instructions
 
 The configurations for training and testing are stored in [multirotors_landing_lib/config](/multirotors_landing_lib/config).
