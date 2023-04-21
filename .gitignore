@@ -1,0 +1,17 @@
+# Remove these folders
+*meshes*
+*build*
+*CMakeFiles*
+*/externals*
+*mlgym.*
+
+# Qt creator
+*.user
+
+# Visual Studio
+*.vscode
+
+# Miscellaneous
+*experiments*
+*.egg-info
+*__pycache__

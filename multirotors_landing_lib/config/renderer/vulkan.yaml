@@ -1,0 +1,21 @@
+# Image size 
+img_width: 752   # [px]
+img_height: 480  # [px]
+
+# Depth camera parameters
+cx_depth: 376.5
+cy_depth: 240.5
+f_depth: 455.0
+
+# Camera pitch
+pitch: 90.0 # [deg]
+
+# Model selection
+resets_change_model: 25  # Number of resets to change the 3D model
+
+# Collider parameters
+collider:
+  robot_dim: 0.5           # [m]
+  resolution: 0.25         # [m]
+  threshold_prob_occ: 0.70 # [-]
+
