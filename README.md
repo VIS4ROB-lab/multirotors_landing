@@ -57,7 +57,7 @@ So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS*
 	$ source ~/venvs/landing/bin/activate
 	$ pip install --upgrade pip wheel
 	$ pip install opencv-python==4.5.2.54
-	$ export ML_PATH=path_to_multirotors_landing >> ~/.bashrc  # Path without final "/"
+	$ echo export ML_PATH=path_to_multirotors_landing >> ~/.bashrc  # Path without final "/"
 	$ pip install .
 	```
 
@@ -123,6 +123,8 @@ To test a trained policy (use flag `-h` for more information):
 ```
 $ python3 scripts/quadrotor_testing.py -w ${path_to_weights}
 ```
+
+The results are stored in `multirotors_landing/experiments/tests`.
 
 ## Socket Communication
 
