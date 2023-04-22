@@ -81,6 +81,7 @@ $ fileid="1xOTkeJnCde1AlD53VwStMAoEV7S4ZJa-"
 $ html=`curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}"`
 $ curl -Lb ./cookie "https://drive.google.com/uc?export=download&`echo ${html}|grep -Po '(confirm=[a-zA-Z0-9\-_]+)'`&id=${fileid}" -o ${filename}
 $ tar -xvf models_landing.tar.xz
+$ rm models_landing.tar.xz
 ```
 
 **Note**: The models __need__ to be stored in `multirotors_landing/meshes`, as this is the coded expected location.
