@@ -70,14 +70,17 @@ $ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -DPYTHON_EXECUTABLE=/usr/bin/python
 ```
 
 ## 3D Model
-The 3D models can be found [here](https://www.polybox.ethz.ch/index.php/s/UOU4EbZEEmTdvSO). Download them, and unzip the file in the folder `multirotors_landing/meshes`.
+The 3D models can be found [here](https://drive.google.com/uc?id=1xOTkeJnCde1AlD53VwStMAoEV7S4ZJa-&export=download). Download them and untar the file in the folder `multirotors_landing/meshes`.
 
 This can be done using the command line as follows:
 ```
 $ cd multirotors_landing
 $ mkdir meshes && cd meshes
-$ wget https://www.polybox.ethz.ch/index.php/s/UOU4EbZEEmTdvSO/download
-$ unzip download
+$ filename="models_landing.tar.xz"
+$ fileid="1xOTkeJnCde1AlD53VwStMAoEV7S4ZJa-"
+$ html=`curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}"`
+$ curl -Lb ./cookie "https://drive.google.com/uc?export=download&`echo ${html}|grep -Po '(confirm=[a-zA-Z0-9\-_]+)'`&id=${fileid}" -o ${filename}
+$ tar -xvf models_landing.tar.xz
 ```
 
 **Note**: The models __need__ to be stored in `multirotors_landing/meshes`, as this is the coded expected location.
