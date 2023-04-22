@@ -29,8 +29,6 @@ def parser():
                         help='Trained weight path')
     parser.add_argument('--rollouts', type=int, default=15,
                         help="Number of rollouts at test time. Defaults to 15")
-    parser.add_argument('--n-envs-training', type=int, default=2,
-                        help="Number of environments the policy was trained on")
     return parser
 
 
