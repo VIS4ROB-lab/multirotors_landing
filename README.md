@@ -42,7 +42,7 @@ So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS*
 	$ git clone git@github.com:VIS4ROB-lab/multirotors_landing.git
 	```
 
-3. Naigate to the main library folder:
+3. Navigate to the main library folder:
 	```
 	$ cd multirotors_landing_lib
 	```
@@ -52,7 +52,7 @@ So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS*
 	$ python3.6 -m venv ~/venvs/landing/
 	```
 
-5. Build the project with `pip` (note: building of `opencv-python` can take a while):
+5. Build the project with `pip`:
 	```
 	$ source ~/venvs/landing/bin/activate
 	$ pip install --upgrade pip wheel
@@ -84,7 +84,7 @@ $ tar -xvf models_landing.tar.xz
 $ rm models_landing.tar.xz
 ```
 
-**Note**: The models __need__ to be stored in `multirotors_landing/meshes`, as this is the coded expected location.
+**Note**: The models __need__ to be stored in `multirotors_landing/meshes`, as this is the hard-coded expected location.
 
 Every model is composed of three files:
 1. `*.obj`: The 3D model geometry. This is used by the Vulkan-based renderer.
