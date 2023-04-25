@@ -187,7 +187,7 @@ def main():
     logging.info("Experiment done")
 
     # Inform the user which weights it should use
-    best_weights_path = find_best_weigths(str(saver.data_dir), verbose=False)
+    best_weights_path = find_best_weigths(saver.data_dir, verbose=False)
     logging.warn(f"Best policy weights: {best_weights_path}")
 
 
