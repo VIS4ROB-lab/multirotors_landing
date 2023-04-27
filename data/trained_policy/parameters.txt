@@ -1,0 +1,83 @@
+########## ARGUMENTS ##########
+Policy:             CnnAsymmetricalPolicy
+Keep Train:         False
+Save directory:     /home/ubuntu/multirotors_landing/multirotors_landing_rl/scripts
+Seed:               0
+Weight:             
+
+########## CONFIG FILEs ##########
+env:
+  num_envs: 4
+  num_threads: 4
+
+common:
+  verbose: false
+  visualization: false
+
+training_env:
+  type_input: ground_truth     # At the moment, only 'ground_truth' is supported
+
+  sim_dt: 0.25  # if we are not using a sleep in between actions: 0.10 
+  max_t: 90.0
+
+   # Action space dimensions
+  act_dim: 1
+
+   # Observation space dimensions
+  img_width: 128
+  img_height: 128
+  img_channels: 2  # depth + semantics
+   # Reward parameters
+  reward:
+      # Configuration
+    use_early_stop_semantics: true
+
+      # Final
+    landing_good_class: 50.0
+    landing_bad_class: -20.0
+    max_time: -50.0
+    target_height: 5.0
+
+      # Step
+    step: -0.2
+    sem_good: 1.0
+    sem_bad: 0.0
+
+      # Action reward
+    lateral_mov: -0.05
+    stand_still: -0.5
+    down_mov: 1.0
+
+      # Collision
+    coll_survival: 0.0
+
+      # Weights step reward
+    sem_weight: 1.0
+    coll_weight: 0.5
+    distance_weight: 0.0
+
+      # If robot moves out of environment limits
+    out_of_bounds: -5.0
+
+   # Collision
+  collision:
+    min_dist: 3.0   # [m] Min dist from obstacles
+    robot_radius: 0.5   # [m]
+   # Policy learning parameters
+  use_dropout: false
+  dropout_rate: 0.1
+
+   # Environment limits
+  env_lim_min_x: -300.0
+  env_lim_max_x: 300.0
+
+  env_lim_min_y: -300.0
+  env_lim_max_y: 300.0
+
+  env_lim_min_z: -10.0
+  env_lim_max_z: 80.0
+
+quadrotor:
+  vel_lateral: 1.0   # [m/s]
+  vel_vertical: 2.0  # [m/s]
+

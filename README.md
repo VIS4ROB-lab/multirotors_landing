@@ -61,7 +61,7 @@ So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS*
 	$ pip install .
 	```
 
-### Building without Python bindings
+### Building without Python Bindings
 To build without Python bindings and use only the C++ library, run the following commands:
 ```
 $ cd multirotors_landing_lib
@@ -69,7 +69,7 @@ $ mkdir build && cd build
 $ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -DPYTHON_EXECUTABLE=/usr/bin/python3.6 && make -j8
 ```
 
-## 3D Model
+## 3D Models
 The 3D models can be found [here](https://drive.google.com/uc?id=1xOTkeJnCde1AlD53VwStMAoEV7S4ZJa-&export=download). Download them and untar the file in the folder `multirotors_landing/meshes`.
 
 This can be done using the command line as follows:
@@ -93,7 +93,7 @@ Every model is composed of three files:
 
 More information about the rendering pipeline can be found [here](./multirotors_landing_lib/thirdparty/vulkan_glasses_for_robots/README.md).
 
-## Running instructions
+## Running Instructions
 
 The configurations for training and testing are stored in [multirotors_landing_lib/config](/multirotors_landing_lib/config).
 
@@ -110,25 +110,40 @@ Note the following:
  * When training start, you should see 3 images from the drone's perspective (RGB, depth, semantics) if the parameter `common/visualization` is set to `true` in the configuration file. 
  * To use more than one environment, adjust the number of environments and threads in the [configuration file](/multirotors_landing_lib/config/quad_landing.yaml).
  * The results of the training are stored in `multirotors_landing/experiments`, and the folder name is the timestamp at the start of the training.
+ * The training script saves the policy weights at constant intervals. The final model that should be used for testing is named `last_step_model.zip`.
+ * If the training is stopped by the user before it is complete, the latest policy weights are saved as `interrupt_model.zip`.
 
-### Policy Testing
+### Evaluate Training Performance
 
 To plot the results from training (use flag `-h` for more information):
 ```
 $ python3 scripts/plot_training.py -f ${path_to_training_folder}
 ```
 
-To find the best policy from a training run:
+To find the best policy from a training run manually (notice that `last_step_model.zip` should be used for testing):
 ```
 $ python3 scripts/find_best_policy_weights.py -f ${path_to_training_folder}
 ```
 
+### Policy Testing
+
 To test a trained policy (use flag `-h` for more information):
 ```
-$ python3 scripts/quadrotor_testing.py -w ${path_to_weights}
+$ python3 scripts/quadrotor_testing.py -w ${path_to_weights} --decay-lr
 ```
 
 The results are stored in `multirotors_landing/experiments/tests`.
+
+### Pre-trained Policy
+
+In the folder [data](./data) we provide a pre-trained policy (4 environments, training and testing on an `p3.2xlarge` instance on AWS):
+* In the folder [data/trained_policy](./data/trained_policy) we store the logs and plots of the training, as well as the final policy weights.
+* In the folder [data/results_trained_policy](./data/results_trained_policy) we report the results of a test run the trained policy.
+
+To use this trained policy, run:
+```
+$ python3 scripts/quadrotor_testing.py -w ../data/trained_policy/last_step_model.zip --decay-lr
+```
 
 ## Socket Communication
 

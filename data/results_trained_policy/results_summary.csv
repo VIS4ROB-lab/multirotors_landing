@@ -1,0 +1,8 @@
+Env,Policy
+essex_castle,"{'Success': 0.9333333333333333, 'Distance': 64.22326527960243, 'Steps': 46.5}"
+fraser_gunnery_range,"{'Success': 1.0, 'Distance': 80.22142353673078, 'Steps': 62.06666666666667}"
+hartley_mansion,"{'Success': 0.9333333333333333, 'Distance': 42.19319915696791, 'Steps': 55.357142857142854}"
+tin_hau_temple,"{'Success': 1.0, 'Distance': 35.81763263532945, 'Steps': 56.53333333333333}"
+xcell_aerial_hq,"{'Success': 1.0, 'Distance': 47.34697102576079, 'Steps': 58.93333333333333}"
+irchel,"{'Success': 0.9333333333333333, 'Distance': 82.93840447435345, 'Steps': 58.142857142857146}"
+hofdi_house,"{'Success': 1.0, 'Distance': 43.75021958548725, 'Steps': 56.93333333333333}"
