@@ -117,7 +117,7 @@ Note the following:
 
 To plot the results from training (use flag `-h` for more information):
 ```
-$ python3 scripts/plot_training.py -f ${path_to_training_folder}
+$ python3 scripts/plot_training.py -f ${path_to_training_folder} --decay-lr
 ```
 
 To find the best policy from a training run manually (notice that `last_step_model.zip` should be used for testing):
@@ -129,7 +129,7 @@ $ python3 scripts/find_best_policy_weights.py -f ${path_to_training_folder}
 
 To test a trained policy (use flag `-h` for more information):
 ```
-$ python3 scripts/quadrotor_testing.py -w ${path_to_weights} --decay-lr
+$ python3 scripts/quadrotor_testing.py -w ${path_to_weights}
 ```
 
 The results are stored in `multirotors_landing/experiments/tests`.
@@ -142,7 +142,7 @@ In the folder [data](./data) we provide a pre-trained policy (4 environments, tr
 
 To use this trained policy, run:
 ```
-$ python3 scripts/quadrotor_testing.py -w ../data/trained_policy/last_step_model.zip --decay-lr
+$ python3 scripts/quadrotor_testing.py -w ../data/trained_policy/last_step_model.zip
 ```
 
 ## Socket Communication
