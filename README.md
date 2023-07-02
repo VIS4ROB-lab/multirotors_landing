@@ -21,10 +21,10 @@ If you use this code in your academic work, please cite [[PDF](https://www.resea
 This project is released under a [GPLv3 license](.aux/license_gpl.txt).
 
 ## Video
-<div href="https://www.youtube.com/watch?v=p8tpLL7Q0GE" target="_blank" align="center"><img src="https://img.youtube.com/vi/p8tpLL7Q0GE/0.jpg" alt="Mesh" width="480" height="360" border="0" /></div>
+<a href="https://www.youtube.com/watch?v=p8tpLL7Q0GE" target="_blank" align="center"><img src="https://img.youtube.com/vi/p8tpLL7Q0GE/0.jpg" alt="Mesh" width="480" height="360" border="0" /></a>
 
 ## Presentation at IROS 2022
-<div href="https://www.youtube.com/watch?v=wOxZIGdsINs" target="_blank" align="center"><img src="https://img.youtube.com/vi/wOxZIGdsINs/0.jpg" alt="Mesh" width="480" height="360" border="0" /></div>
+<a href="https://www.youtube.com/watch?v=wOxZIGdsINs" target="_blank" align="center"><img src="https://img.youtube.com/vi/wOxZIGdsINs/0.jpg" alt="Mesh" width="480" height="360" border="0" /></a>
 
 ## Installation
 So far, the pipeline has been tested with **python 3.6** and **Ubuntu 20.04 LTS**.
